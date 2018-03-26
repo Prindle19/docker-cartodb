@@ -96,7 +96,7 @@ npm install
 #MAPS API:
 RUN git clone git://github.com/CartoDB/Windshaft-cartodb.git &&\
 cd Windshaft-cartodb &&\
-git checkout master &&\
+git checkout 7be5361433c290e86fc881259708f74872cdd38e . &&\
 npm install
 
 #Ruby
@@ -154,7 +154,7 @@ ENV LC_ALL en_US.UTF-8
 RUN cd cartodb &&\
     export PATH=$PATH:$PWD/node_modules/grunt-cli/bin &&\
     bundle install &&\
-    bundle exec grunt --environment production
+    bundle exec grunt --environment=production
 
 RUN service postgresql start && service redis-server start &&\
     cd cartodb &&\
